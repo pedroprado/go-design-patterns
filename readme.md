@@ -1,6 +1,6 @@
 
 
-## 2. Composite
+## 1. Composite
 
 #### O que é
 
@@ -25,7 +25,7 @@
 * Temos duas classes, Bird e Lizard. Queremos uma terceira classe (Dragon) que pode fazer tudo o que Bird e Lizard fazem, e mais algumas coisas 
 
 
-## 3. Proxy Design Pattern
+## 3. Proxy
 
 #### O que é
 
