@@ -185,3 +185,31 @@
 * Temos uma Lâmpada que pode ter o estado Ligada/Desligada. Quando está Ligada, ela só pode ser Desligada, e quando está Desligada só pode ser Ligada.
 
 * Para isso pode-se definir uma interface de estado, que mude o comportamento da lâmpada de acordo com a implementação da interface que a mesma usa 
+
+## 20. Strategy
+
+#### O que é
+
+* Ajuda a separar os conceitos de **Alto Nível** (parte específica) e **Baixo Nível** (partes comuns)
+
+* A estratégia deve ser **injetada** no algoritmo de alto nível
+
+* Usa **composição**
+
+#### Exemplo
+
+* Impressão: Queremos imprimir um texto, o qual pode ser em Markdown ou Html. Para isso, definimos o algoritmo de alto nível (a Impressão em si) no qual deve ser injetado uma interface de ***Estratégia de Impressão***, a qual pode ser uma das duas mencionadas.
+
+## 21. Template Method
+
+#### O que é 
+
+* Similar ao padrão **Strategy** (este pode usar Herança em outras linguagens, o que não é possível em Go, já que o mesmo não tem herança)
+
+* Pode ser feito com Herança (o que não existe em Go) ou com simples **function**
+
+* No caso da função, tudo o que esta precisa fazer é depender de e usar uma interface
+
+#### Exemplo
+
+* Jogo de Xadrez: Queremos simular um jogo básico de Xadrez, o qual é iniciado por uma função **PlayGame** (este é o Template Method). Esta função deve depender e usar de uma interface para executar o jogo.
