@@ -108,8 +108,29 @@
 
 ## 15. Iterator
 
+
+#### O que é
+
 * Objeto que facilita a travessia de uma estrutura de dados em particular (como por exemplo uma ***Tree Traversal*** é um iterator de uma binary tree)
 
 * Mantém uma referência ao ***elemento atual***, e deve saber como se mover para o ***próximo elemento***
 
+#### Exemplo
+
 * Em Go a iteração pode ser facilmente implementada usando o ***for range*** em ***slices*** ou um simples ***for*** sobre elementos de ***canais***
+
+* Objetos que facilitam a travessia de estrutura de dados complexas, como Binary Trees (Tree Traversal)
+
+## 16. Mediator
+
+#### O que é
+
+* Componente que facilita a comunicação entre outros componentes
+
+* Os componentes se comunicando não precisam saber da existência uns dos outros (ter referência)
+
+* Todos os componentes referenciam o Mediator. O Mediator mantém a referência de todos os componentes
+
+#### Exemplo
+
+* Pessoas se comunicando em Chat Room (este é o Mediator): Pessoas precisam se comunicar mas ***não se comunicam diretamente***. Elas se comunicam com uma sala (Chat Room) e esta comunica as pessoas. Assim, as pessoas precisam ter a referência do ***Chat Room*** apenas. E Chat Room precisa ter a referência de todas as pessoas.
