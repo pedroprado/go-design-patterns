@@ -134,3 +134,21 @@
 #### Exemplo
 
 * Pessoas se comunicando em Chat Room (este é o Mediator): Pessoas precisam se comunicar mas ***não se comunicam diretamente***. Elas se comunicam com uma sala (Chat Room) e esta comunica as pessoas. Assim, as pessoas precisam ter a referência do ***Chat Room*** apenas. E Chat Room precisa ter a referência de todas as pessoas.
+
+## 17. Memento
+
+#### O que é 
+
+* Token que representa um estado do sistema (como um snapshot)
+
+* Permite o ***retorno ao estado prévio***
+
+* Usado pelo ***Cliente***
+
+* Mementos não pode mudar estado (read only) nem possui comportamento (métodos)
+
+* Pode ser usado como uma maneira de guardar histórico das mudanças (o que pode ser muito pesado para sistemas grandes)
+
+#### Exemplo
+
+* Conta Bancária: uma conta bancária tem a possibilidade de fazer um depósito, aumentando seu saldo. Queremos guardar os valores do saldo da conta bancária a cada depósito, de maneira que seja possível *retornar* a este saldo a qualquer momento. Com um *Memento*, guardamos o *estado da conta bancária a cada depósito*.
