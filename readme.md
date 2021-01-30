@@ -152,3 +152,20 @@
 #### Exemplo
 
 * Conta Bancária: uma conta bancária tem a possibilidade de fazer um depósito, aumentando seu saldo. Queremos guardar os valores do saldo da conta bancária a cada depósito, de maneira que seja possível *retornar* a este saldo a qualquer momento. Com um *Memento*, guardamos o *estado da conta bancária a cada depósito*.
+
+
+## 18. Observer
+
+#### O que é
+
+* Uma maneira de alguém ser informado quando uma mudança ocorre
+
+* Envolve dois componentes: 
+    * observer: objeto que quer **ser informado** da mudança (subscriber/client)
+    * observable: objeto que gera os eventos de notificação para **todos** os observers (aceita subscriptions)
+
+* Evento: dados com tipo dinâmico (para poderem ser processados por todos os observers, na sua própria maneira)
+
+#### Exemplo
+
+* Pessoal que fica doente: quando uma pessoa fica doente ela vai ao médico, o qual passa a tomar conta da pessoa. Nesse sentido, a ***pessoa é o observable*** (notifica o médico quando sente alguma coisa) e o ***médico o observer*** (fica de olho no paciente)
