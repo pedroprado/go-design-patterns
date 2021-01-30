@@ -169,3 +169,19 @@
 #### Exemplo
 
 * Pessoal que fica doente: quando uma pessoa fica doente ela vai ao médico, o qual passa a tomar conta da pessoa. Nesse sentido, a ***pessoa é o observable*** (notifica o médico quando sente alguma coisa) e o ***médico o observer*** (fica de olho no paciente)
+
+## 19. State
+
+#### O que é
+
+* Objetos que mudam o comportamento dependendo do seu estado
+
+* Algum tipo de evento é responsável por mudar o estado do objeto
+
+* State Machine: objeto responsável por gerenciar a mudança de estado de objetos
+
+#### Exemplo
+
+* Temos uma Lâmpada que pode ter o estado Ligada/Desligada. Quando está Ligada, ela só pode ser Desligada, e quando está Desligada só pode ser Ligada.
+
+* Para isso pode-se definir uma interface de estado, que mude o comportamento da lâmpada de acordo com a implementação da interface que a mesma usa 
