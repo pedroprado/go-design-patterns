@@ -54,6 +54,7 @@ type BankAccountCommand struct {
 	amount  int
 }
 
+//Aqui o "Comando processa o Objeto". Mas pode ser o "Objeto processa o Comando" também
 func NewBankAccountCommand(account *BankAccount, action string, amount int) BankAccountCommand {
 	return BankAccountCommand{
 		account: account,

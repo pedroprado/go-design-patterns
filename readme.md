@@ -101,3 +101,15 @@
 
 
 ## 14. Interpreter
+
+* Toda entrada de texto precisa ser colocada em estruturas de dados
+
+* Texto é transformado em ***Tokens Léxicos*** (Lexing) e depos ***Processado*** (Parsing)
+
+## 15. Iterator
+
+* Objeto que facilita a travessia de uma estrutura de dados em particular (como por exemplo uma ***Tree Traversal*** é um iterator de uma binary tree)
+
+* Mantém uma referência ao ***elemento atual***, e deve saber como se mover para o ***próximo elemento***
+
+* Em Go a iteração pode ser facilmente implementada usando o ***for range*** em ***slices*** ou um simples ***for*** sobre elementos de ***canais***
