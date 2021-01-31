@@ -1,18 +1,30 @@
 
+# 1.Creational Design Patterns
 
-## 1. Builder
+## 1.1.Builder
 
-## 2. Factories
+#### O que é 
 
-## 3. Prototype
+* Design pattern que ajuda na hora de criar objetos **complexos**
 
-## 4. Singleton
+## 1.2.Factories
 
-## 5. Adapter
+## 1.3.Prototype
 
-## 6. Bridge
+## 1.4.Singleton
 
-## 7. Composite
+#### O que é
+
+* Usado
+
+# 2.Structural Design Patterns
+
+
+## 2.1.Adapter
+
+## 2.2.Bridge
+
+## 2.3.Composite
 
 #### O que é
 
@@ -22,7 +34,7 @@
 
  * Temos uma classe MinhaClasse. Queremos que tanto um único objeto de MinhaClasse como uma coleção dela (List<MinhaClasse>), ao usar um método MeuMétodo, tenahm o mesmo comportamento.
 
-## 8. Decorator
+## 2.4.Decorator
 
 #### O que é
 * Adiciona comportamento à objetos e classes, sem a necessidade de modificá-los (o que quebraria o OCP)
@@ -32,9 +44,14 @@
 * Duas formas de fazer: usando Composição ou Herança. 
 
 
-## 9. Facade
+## 2.5.Facade
 
-## 10.Flyweight
+#### O que é
+
+
+#### Exemplo
+
+## 2.6.Flyweight
 
 
 
@@ -43,7 +60,7 @@
 * Temos duas classes, Bird e Lizard. Queremos uma terceira classe (Dragon) que pode fazer tudo o que Bird e Lizard fazem, e mais algumas coisas 
 
 
-## 11. Proxy
+## 2.7.Proxy
 
 #### O que é
 
@@ -62,7 +79,9 @@
 * Solução: Adicionar um CarProxy, que herda o comportamento de Car, adicionando a verificação da idade no método Drive(). 
 
 
-## 12. Chain of Responsability
+# 3.Betahvioral Design Patterns
+
+## 3.1.Chain of Responsability
 
 #### O que é
 
@@ -72,7 +91,7 @@
 
 * Deve ter um processamento padrão e ter a habilidade de ser terminado
 
-#### Comand Query Separation
+#### Exemplo: Comand Query Separation
 
 * Command: pede para uma ação ocorrer
 
@@ -81,7 +100,7 @@
 * Exemplo: Broker Chain
 
 
-## 13. Command
+## 3.2.Command
 
 #### O que é
 
@@ -100,13 +119,13 @@
 * Conta do Banco: este objeto tem um método Depositar. Para manter o rastreamento de todas as operações que ocorreram sobre a conta usamos um Commando que faz a chamada do método Depositar.
 
 
-## 14. Interpreter
+## 3.3.Interpreter
 
 * Toda entrada de texto precisa ser colocada em estruturas de dados
 
 * Texto é transformado em ***Tokens Léxicos*** (Lexing) e depos ***Processado*** (Parsing)
 
-## 15. Iterator
+## 3.4.Iterator
 
 
 #### O que é
@@ -121,13 +140,13 @@
 
 * Objetos que facilitam a travessia de estrutura de dados complexas, como Binary Trees (Tree Traversal)
 
-## 16. Mediator
+## 3.5.Mediator
 
 #### O que é
 
 * Componente que facilita a comunicação entre outros componentes
 
-* Os componentes se comunicando não precisam saber da existência uns dos outros (ter referência)
+* Os componentes se comunicando não precisam saber da existência uns dos outros (isto é, ter referência um do outro)
 
 * Todos os componentes referenciam o Mediator. O Mediator mantém a referência de todos os componentes
 
@@ -135,7 +154,7 @@
 
 * Pessoas se comunicando em Chat Room (este é o Mediator): Pessoas precisam se comunicar mas ***não se comunicam diretamente***. Elas se comunicam com uma sala (Chat Room) e esta comunica as pessoas. Assim, as pessoas precisam ter a referência do ***Chat Room*** apenas. E Chat Room precisa ter a referência de todas as pessoas.
 
-## 17. Memento
+## 3.6.Memento
 
 #### O que é 
 
@@ -154,7 +173,7 @@
 * Conta Bancária: uma conta bancária tem a possibilidade de fazer um depósito, aumentando seu saldo. Queremos guardar os valores do saldo da conta bancária a cada depósito, de maneira que seja possível *retornar* a este saldo a qualquer momento. Com um *Memento*, guardamos o *estado da conta bancária a cada depósito*.
 
 
-## 18. Observer
+## 3.7.Observer
 
 #### O que é
 
@@ -170,7 +189,7 @@
 
 * Pessoal que fica doente: quando uma pessoa fica doente ela vai ao médico, o qual passa a tomar conta da pessoa. Nesse sentido, a ***pessoa é o observable*** (notifica o médico quando sente alguma coisa) e o ***médico o observer*** (fica de olho no paciente)
 
-## 19. State
+## 3.8.State
 
 #### O que é
 
@@ -186,7 +205,7 @@
 
 * Para isso pode-se definir uma interface de estado, que mude o comportamento da lâmpada de acordo com a implementação da interface que a mesma usa 
 
-## 20. Strategy
+## 3.9.Strategy
 
 #### O que é
 
@@ -200,16 +219,44 @@
 
 * Impressão: Queremos imprimir um texto, o qual pode ser em Markdown ou Html. Para isso, definimos o algoritmo de alto nível (a Impressão em si) no qual deve ser injetado uma interface de ***Estratégia de Impressão***, a qual pode ser uma das duas mencionadas.
 
-## 21. Template Method
+## 3.10.Template Method
 
 #### O que é 
 
 * Similar ao padrão **Strategy** (este pode usar Herança em outras linguagens, o que não é possível em Go, já que o mesmo não tem herança)
 
-* Pode ser feito com Herança (o que não existe em Go) ou com simples **function**
+* Pode ser feito com **Herança** (o que não existe em Go) ou com uma simples **function**
 
 * No caso da função, tudo o que esta precisa fazer é depender de e usar uma interface
 
 #### Exemplo
 
 * Jogo de Xadrez: Queremos simular um jogo básico de Xadrez, o qual é iniciado por uma função **PlayGame** (este é o Template Method). Esta função deve depender e usar de uma interface para executar o jogo.
+
+## 3.11.Visitor
+
+#### O que é
+
+* Usado quando queremos aplicar uma nova funcionalidade a um tipo e seus subtipos (todos os objetos daquele tipo e sua hieraquia). Não queremos violar o **OCP** nem o **SRP**
+
+* Para adicionar essa nova funcionalidade usa-se um elemento, o **Visitor**
+
+* Tipos de Visitor: 
+    * Intrusive: viola o **OCP**. **Modifica** interfaces já existentes
+    * Reflective: **função** que recebe o tipo desejado e adiciona a funcionalidade. Faz **checagem de tipo** 
+    * Classic: usa single ou double **dispatch**
+        * single dispatch => Decidir que método ou função chamar baseado no tipo de objeto **sobre o qual** a função ou método vai ser chamada (1 parâmetro).
+        * double dispatch => Decidir qual método ou função chamar baseado no tipo do objeto **que chama** e tipo de objeto **sobre o qual** a função vai ser chamada (2 parâmetros)
+
+#### Example
+
+* Vamos supor que temos uma Inteface que representa uma expressão matemática **Expression**
+
+* Nós já criamos várias implementações concretas, como as expressões de Adição e Multiplicação
+
+* Agora precisamos criar uma maneira de Imprimir **todas as Expressões** (tipos e subtipos) de maneira particular
+
+* Pode-se fazer isso:
+    * Usando a maneira intrusiva: modificando a interface Expression, adicionando o método Print
+    * Usando a maneira reflexiva: adicionando uma **função** que recebem as expressões, que faz **checagem dos tipos** e adiciona a funcionalidade de imprimir (de acordo com o tipo)
+    * Usando a maneira clássica: faz-se o objeto (Expressão) aceitar um **Visitante**, implementando o método **Accept**. Os Visitantes são os responsáveis por determianarem o que vai ser feito sobre o visitado (respeitando o SRP)
