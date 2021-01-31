@@ -104,15 +104,11 @@
 
 #### O que é
 
-* Representação de uma ação: X deve alterar Z (X manda um comando à Z)
+* É um objeto que representa uma instrução: Encapsula os detalhes de uma operação em um objeto separado
 
-* É um objeto que representa uma instrução: Encapsuça os detalhes de uma operação em um objeto separado
+* Pode ser usado para manter o histórico/rastreamento de ações que ocorreram sobre determinado objeto
 
-* Usado para manter o histórico/rastreamento de ações que ocorreram sobre determinado objeto
-
-* Comandos devem poder serem desfeitos
-
-* Apenas comandos bem sucedidos devem poder serem desfeitos
+* Comandos podem ser desfeitos (apenas os bem sucedidos deveriam poder)
 
 #### Exemplo
 
