@@ -45,10 +45,14 @@ func main() {
 		},
 	}
 
-	visitor := &ExpressionPrinter{sb: &stringsBuilder}
+	expressionPrinter := &ExpressionPrinter{sb: &stringsBuilder}
 
-	expressionThree.Accept(visitor)
-	fmt.Println(stringsBuilder.String())
+	expressionThree.Accept(expressionPrinter)
+	fmt.Println("Imprimindo expressão:", stringsBuilder.String())
+
+	expressionCalculator := &ExpressionCalculator{}
+	expressionThree.Accept(expressionCalculator)
+	fmt.Println("Cálculo da expressão:", expressionCalculator.total)
 }
 
 //------------------------------INTRUSIVE VISITOR---------------------------------------------
@@ -151,5 +155,17 @@ func (expressionPrinter *ExpressionPrinter) VisitAdditionExpression(additionExpr
 	expressionPrinter.sb.WriteRune('+')
 	additionExpression.right.Accept(expressionPrinter)
 	expressionPrinter.sb.WriteRune(')')
+}
 
+type ExpressionCalculator struct {
+	total float64
+}
+
+func (expressionCalculator *ExpressionCalculator) VisitDoubleExpression(doubleExpression *DoubleExpressionThree) {
+	expressionCalculator.total += doubleExpression.value
+}
+
+func (expressionCalculator *ExpressionCalculator) VisitAdditionExpression(additionExpression *AdditionExpressionThree) {
+	additionExpression.left.Accept(expressionCalculator)
+	additionExpression.right.Accept(expressionCalculator)
 }
