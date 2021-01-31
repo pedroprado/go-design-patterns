@@ -79,7 +79,7 @@
 * Solução: Adicionar um CarProxy, que herda o comportamento de Car, adicionando a verificação da idade no método Drive(). 
 
 
-# 3.Betahvioral Design Patterns
+# 3.Behavioral Design Patterns
 
 ## 3.1.Chain of Responsability
 
