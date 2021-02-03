@@ -7,6 +7,10 @@
 
 * Design pattern que ajuda na hora de criar objetos **complexos**
 
+* Construção de objetos step-by-step
+
+* Oferece uma API para que este passo à passo seja entedível e simples
+
 ## 1.2.Factories
 
 ## 1.3.Prototype
