@@ -7,13 +7,41 @@
 
 * Design pattern que ajuda na hora de criar objetos **complexos**
 
-* Construção de objetos step-by-step
+* Construção de objetos **step-by-step**
 
 * Oferece uma API para que este passo à passo seja entedível e simples
 
 ## 1.2.Factories
 
+#### O que é 
+
+* Também Ajuda na criação de objetos **complexos**
+
+* Entidade que auxilia na construção de objetos **completos** (não step-by-step como o Builder)
+
+#### Exemplos
+
+* Factory Function: uma função auxiliar, que ajuda na criação do objeto
+
+* Structura Factory: um objeto (struct) que toma conta da criação de outro objeto
+
 ## 1.3.Prototype
+
+#### O que é
+
+* Um objeto ou método que ajuda a copiar/clonar objetos já **completamente inicializados**
+
+* Isto resolve o problema que pode existir quando algums objetos copiados não lidam com o problema de ponteiros (os objetos original e copiado apontam para um mesmo ponteiro em determinado campo).
+
+* Um prototype, portanto, que ajuda a **copiar e customizar** um objeto
+
+#### Exemplos
+
+* Deep Copy: copia-se campo a campo toda vez que for necessário 
+
+* Copy Method: método ou função que copia um objeto
+
+* Copy Serialization: copia através de um objeto serializado
 
 ## 1.4.Singleton
 

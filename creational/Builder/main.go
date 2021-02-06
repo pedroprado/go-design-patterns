@@ -15,13 +15,18 @@ func main() {
 
 	//builder for diferent aspects of an object
 	pb := NewPersonBuilder()
-
 	person := pb.Lives().
 		At("Rua Roberto Sandal").In("Santos").WithPostcode("11500300").
 		Works().
 		At("IBM").As("Salesman").WithSalary(120000).Build()
 
 	fmt.Println(person)
+
+	//functional builder
+	builder2 := &Person2Builder{}
+	person2 := builder2.Called("Dimitri").WorksAt("IBM").Build()
+	fmt.Println(person2)
+
 }
 
 //--------Builder for contructing html like strings -------------
@@ -146,4 +151,35 @@ func (pb *PersonJobBuilder) As(position string) *PersonJobBuilder {
 func (pb *PersonJobBuilder) WithSalary(annualIncome int) *PersonJobBuilder {
 	pb.person.AnnualIncome = annualIncome
 	return pb
+}
+
+//------------FUNCTIONAL BUILDER------------
+
+type Person2 struct {
+	name, position string
+}
+
+type personMod func(*Person2)
+type Person2Builder struct {
+	actions []personMod
+}
+
+func (b *Person2Builder) Called(name string) *Person2Builder {
+	b.actions = append(b.actions, func(p *Person2) {
+		p.name = name
+	})
+	return b
+}
+
+func (b *Person2Builder) WorksAt(position string) *Person2Builder {
+	b.actions = append(b.actions, func(p *Person2) { p.position = position })
+	return b
+}
+
+func (b *Person2Builder) Build() *Person2 {
+	p := Person2{}
+	for _, action := range b.actions {
+		action(&p)
+	}
+	return &p
 }
