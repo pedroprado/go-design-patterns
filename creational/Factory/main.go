@@ -4,20 +4,20 @@ import "fmt"
 
 func main() {
 
-	//functional factory generator
+	//Functional Factory
 	developerFactory := NewEmployeeFactory("developer", 60000)
 	developer := developerFactory("Peter")
 
 	managerFactory := NewEmployeeFactory("manager", 120000)
 	manager := managerFactory("Elias")
 
-	//structural factory generator
+	//Structural Factory
 	bossFactory := NewEmployeeFactory2("boss", 240000)
 	boss := bossFactory.Create("John")
 
 	fmt.Println(developer, manager, boss)
 
-	//prototype factory: preconfigured objects
+	//Prototype Factory
 	bossSam := NewEmployee("Sam", 2)
 	fmt.Println(bossSam)
 }
@@ -43,7 +43,7 @@ type Employee struct {
 }
 
 //Functional Factory Generator: returns a function that creates an instance of an object (high order functions)
-//Advantage: factories can be passed as arguments
+//Vantagem: factories pode ser utilizadas como argumentos
 func NewEmployeeFactory(position string, annualIncome int) func(name string) *Employee {
 	return func(name string) *Employee {
 		return &Employee{name: name, position: position, annualIncome: annualIncome}
@@ -65,7 +65,7 @@ func NewEmployeeFactory2(position string, annualIncome int) *EmployeeFactory {
 }
 
 //---------------------------------PROTOTYPE FACTORY--------------------
-//Factory that creates preconfigure objects (similar objects)
+//Factory que cria objetos preconfigurados
 type Employee2 struct {
 	name, position string
 	annualIncome   int

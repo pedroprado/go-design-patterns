@@ -7,13 +7,13 @@ import (
 
 func main() {
 
-	//builder for html like strings
+	//Build para construir strings html
 	b := NewHtmlBuilder("ul")
 	b.AddChild("li", "hello")
 	b.AddChild("li", "world")
 	fmt.Println(b.String())
 
-	//builder for diferent aspects of an object
+	//Conjunto de Builders: um para cada aspecto do objeto
 	pb := NewPersonBuilder()
 	person := pb.Lives().
 		At("Rua Roberto Sandal").In("Santos").WithPostcode("11500300").
@@ -22,7 +22,7 @@ func main() {
 
 	fmt.Println(person)
 
-	//functional builder
+	//Builder funcional
 	builder2 := &Person2Builder{}
 	person2 := builder2.Called("Dimitri").WorksAt("IBM").Build()
 	fmt.Println(person2)
@@ -30,7 +30,7 @@ func main() {
 }
 
 //--------Builder for contructing html like strings -------------
-//Without the builder, the strings construction would be very "not user friendly"
+//Sem o builder, a construção das strings html seria muito difícil e não "user friendly"
 const (
 	indentSize = 2
 )
@@ -83,9 +83,9 @@ func (b *HtmlBuilder) AddChild(childName, childText string) {
 	b.root.elements = append(b.root.elements, e)
 }
 
-//-------------Builder for Facets-----------
-//Separating the Building of diferent aspects of an object
-//Aggregating builders
+//-------------Builder Facets-----------
+//Separa a construção para cada aspecto do objeto
+//Agrega os Builders
 type Person struct {
 	Street, Postcode, City string
 
@@ -101,12 +101,12 @@ func NewPersonBuilder() *PersonBuilder {
 	return &PersonBuilder{&Person{}}
 }
 
-//ways to transition among the builders
+//método para transitar entre os builders
 func (pb *PersonBuilder) Lives() *PersonAddresBuilder {
 	return &PersonAddresBuilder{PersonBuilder: *pb}
 }
 
-//ways to transition among the builders
+//método para transitar entre os builders
 func (pb *PersonBuilder) Works() *PersonJobBuilder {
 	return &PersonJobBuilder{PersonBuilder: *pb}
 }
@@ -154,7 +154,6 @@ func (pb *PersonJobBuilder) WithSalary(annualIncome int) *PersonJobBuilder {
 }
 
 //------------FUNCTIONAL BUILDER------------
-
 type Person2 struct {
 	name, position string
 }

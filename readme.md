@@ -47,6 +47,26 @@
 
 #### O que é
 
+* Usado para componentes que **só precisam existir um** no sistema e sua construção é muito custosa
+
+* A ideia é dar a mesma referência do componente para todos os outros componentes que o utilizam
+
+* O objetivo é **previnir a inicialização de novas instâncias desnecessárias**
+
+#### Exemplos
+
+* Factories
+
+* Repositories
+
+#### Problemas
+
+* Quebra o Dependency Inversion Principle: quando usamos o Singleton, este é uma implementação concreta. Logo, os componentes que o usam não dependem de uma interface polimórfica, o que quebra o DIP. Isso também dificulta a criação de testes unitários, já que a implementação não pode ser mockada.
+
+* Superando o problema: o problema de DIP com Singleton pode ser superado com o uso de interfaces polimórficas (sendo o singleton a única instância concreta possível desta interface)
+
+#### O que é
+
 * Usado
 
 # 2.Structural Design Patterns
