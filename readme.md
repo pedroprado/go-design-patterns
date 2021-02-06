@@ -74,7 +74,20 @@
 
 ## 2.1.Adapter
 
+#### O que é 
+
+* Um componente que transforma uma interface A em uma interface desejada B
+
+#### Exemplo
+
+* Temos uma interface de **VectorImage** que representa uma imagem composta por vários pontos. Queremos imprimir os pontos que compõe esta imagem através da função **DrawImage()**. Porém, esta função não aceita um VectorImage, mas apenas uma **interface RasterImage**. Logo, precisamos de um Adaptador, ou seja, um elemento que é desta inferface RasterImage (implementa-a) e que consegue extrair as informações necessárias de um VectorImage para imprimi-lo com DrawImage()
+
 ## 2.2.Bridge
+
+#### O que é
+
+
+#### Exemplo
 
 ## 2.3.Composite
 
