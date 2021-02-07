@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//Agregação múltipla
 type Bird struct {
 	age int
 }
@@ -50,3 +51,5 @@ func (ref *Dragon) Crawl() {
 func (ref *Dragon) Roar() {
 	fmt.Println("roaring")
 }
+
+//Decorator usando agregação

@@ -117,25 +117,39 @@
 ## 2.4.Decorator
 
 #### O que é
-* Adiciona comportamento à objetos e classes, sem a necessidade de modificá-los (o que quebraria o OCP)
+* Adiciona comportamento à objetos e classes sem a necessidade de modificá-los (o que quebraria o OCP)
 
 * Para isso, gera-se uma NOVA interface, adicinando funcionalidades e mantendo uma referência a interface antiga
 
-* Duas formas de fazer: usando Composição ou Herança. 
-
+* Duas formas de fazer: usando Composição ou Herança (em Go não existe Herança). 
 
 ## 2.5.Facade
 
 #### O que é
 
+* O objetivo deste padrão é prover uma **interface simples** e esconder a complexidade do software
+
+* Balanceamento entre usa complexidade e usabilidade/apresentação
+
+* Esconde um sistema complexo e o expões por uma API simples
 
 #### Exemplo
 
 ## 2.6.Flyweight
 
+#### O que é
+
+* Padrão que ajuda a evitar a redundância no armazenamento de dados
+
+* Ajuda a otimizar a quantidade de memória utilizada
+
+* A ideia é guardar **dados comuns** em algum componente externo e acessá-los via índice ou ponteiro
+
 #### Exemplo
 
-* Temos duas classes, Bird e Lizard. Queremos uma terceira classe (Dragon) que pode fazer tudo o que Bird e Lizard fazem, e mais algumas coisas 
+* Queremos guardar textos formatados por capitalização. Inicialmente, precisamos de uma lista de boolean para guardar a informação de qual letra deve ser capitalizada.
+
+* Com o uso do Flyweight evitamos o uso desta lista, que pode ser muito grande para textos grandes.
 
 ## 2.7.Proxy
 
@@ -143,17 +157,19 @@
 
 * Uma classe que funciona como uma interface para um recurso em particular, não permitindo o acesso direto à ele.
 
-* O objetivo é mudar o comportamento de uma interface SEM mudá-la (preserva a interface).
+* O objetivo é mudar o comportamento de uma interface sem mudá-la (preserva a interface).
 
 * Adiciona camadas de validação a comportamentos já existentes. 
 
 * Geralmente usa herança.
+
+* Proxy Vs Decorator: Proxy usa a mesma interface x Decorator provê uma nova interface "melhorada"
  
 #### Exemplo 
 
 * Problema: temos duas classes, Car e um Driver. Car, o qual tem o comportamento "dirigir". Não queremos ferir o OCP (logo não podemos modificar nem Driver nem Car). Mas queremos impedir que o Driver dirija se tiver idade < 16.  
 
-* Solução: Adicionar um CarProxy, que herda o comportamento de Car, adicionando a verificação da idade no método Drive(). 
+* Solução: Adicionar um CarProxy, que tem o mesmo comportamento de Car (implementa a mesma interface), mas adicionando a verificação da idade no método Drive(). 
 
 
 # 3.Behavioral Design Patterns
