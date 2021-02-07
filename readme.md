@@ -65,12 +65,8 @@
 
 * Superando o problema: o problema de DIP com Singleton pode ser superado com o uso de interfaces polimórficas (sendo o singleton a única instância concreta possível desta interface)
 
-#### O que é
-
-* Usado
 
 # 2.Structural Design Patterns
-
 
 ## 2.1.Adapter
 
@@ -86,8 +82,25 @@
 
 #### O que é
 
+* Resolve o problema de **Produto Cartesiano**, desacoplando a abstração da implementação
+
+* Se temos dois **tipos**, cada um com 3 **subtipos**, sem a utilização do Bridge, teríamos um total de 2x3 = 6 classes para resolver o problema
+
+* Essa situação causa o Produto Cartesiano pois tenta-se entender os tipos como dimensões diferentes. Com o padrão Bridge, **uma dessas dimensões é eliminada e usada como dependência** na outra (através da **composição**)
+
+* Para situações simples (como a aprensentada), isso não muda muito o número de classes que serão necessárias. Mas para números maiores, o uso do padrão faz toda diferença: vamos supor o caso de **10 tipos x 10 subtipos** = **100** classes sem o uso do padrão Bridge e **20** classes com o seu uso
 
 #### Exemplo
+
+* Dois tipos de formas: Círculo e Retângulo
+
+* Dois tipos de renderização: Raster e Vector
+
+* Se não usássemos o Bridge (injenção de dependência de interfaces polimórifcas), seria preciso 4 classes para satisfazer o problema de **diversos tipos de renderização para diferentes formas**
+
+* Com o Bridge, criamos uma interface polimórfica (Renderer) e injetamos às formas, desacoplando da implementação
+
+* Por isso, o Bridge pode ser pensado como uma **forma mais forte de encapsulamento**
 
 ## 2.3.Composite
 
@@ -95,9 +108,11 @@
 
 * Resolve o problema de uniformização de comportamento para valores e coleções
 
+* Esta uniformização significa **ter a mesma interface**
+
 #### Exemplo
 
- * Temos uma classe MinhaClasse. Queremos que tanto um único objeto de MinhaClasse como uma coleção dela (List<MinhaClasse>), ao usar um método MeuMétodo, tenahm o mesmo comportamento.
+ * Temos uma classe **MinhaClasse**. Queremos que tanto um único objeto de MinhaClasse como uma coleção dela (List<MinhaClasse>), ao usar um método **MeuMétodo**, tenahm o mesmo comportamento.
 
 ## 2.4.Decorator
 
@@ -118,12 +133,9 @@
 
 ## 2.6.Flyweight
 
-
-
 #### Exemplo
 
 * Temos duas classes, Bird e Lizard. Queremos uma terceira classe (Dragon) que pode fazer tudo o que Bird e Lizard fazem, e mais algumas coisas 
-
 
 ## 2.7.Proxy
 
